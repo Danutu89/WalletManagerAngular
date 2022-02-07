@@ -1,0 +1,17 @@
+
+    .sidebar {
+        max-width: 300px;
+        background: white;
+        border: 1px solid #ccc;
+        height: 500px;
+        border-radius: 15px;
+        padding: 1rem;
+        display: flex;
+        flex-flow: column;
+
+        .content {
+            display: flex;
+            flex-flow: column;
+        }
+    }
+

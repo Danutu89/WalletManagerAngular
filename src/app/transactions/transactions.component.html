@@ -1,0 +1,22 @@
+<div class="transactions">
+    <div class="header">
+        <h2>Transactions</h2>
+    </div>
+    <div class="list" *ngIf="data?.address?.transactions?.edges?.length || 0 > 0; else elseBlock">
+        <ng-template class="transaction" ngFor let-transaction [ngForOf]="data?.address?.transactions?.edges"
+            let-i="index">
+            <div class="transaction">
+                <div class="status"
+                    [ngClass]="{confirmed: transaction?.node?.status === 'OK', pending: transaction?.node?.status === 'PENDING'}">
+                    {{transaction?.node?.status}}
+                </div>
+                <div class="data">
+                    <div class="sender">{{transaction.node.fromAddressHash}} -> {{transaction.node?.toAddressHash ||
+                        transaction.node.createdContractAddressHash}}</div>
+                    {{transaction?.node?.value}}
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>
+<ng-template #elseBlock>Loading...</ng-template>

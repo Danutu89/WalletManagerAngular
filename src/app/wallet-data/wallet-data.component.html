@@ -1,0 +1,13 @@
+<div class="sidebar">
+    <div class="header">
+        <h2>Welcome to your wallet</h2>
+    </div>
+    <div class="content">
+        <span>Balance: {{data?.balance || 'Loading..'}}</span>
+        <span>Vested Balance: {{data?.vestedAllowedBalance || 'Loading..'}}</span>
+        <span>Vested Total: {{data?.vestedTotalBalance || 'Loading..'}}</span>
+    </div>
+</div>
+<div class="transactions">
+    <app-transactions [data]="transactions"></app-transactions>
+</div>

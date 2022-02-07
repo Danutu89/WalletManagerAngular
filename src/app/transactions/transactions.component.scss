@@ -1,0 +1,45 @@
+
+.list {
+    display: flex;
+    flex-flow: column;
+    gap: 0.5rem;
+
+    .transaction {
+        display: flex;
+        flex-flow: row;
+        border-radius: 10px;
+        overflow: hidden;
+        background: white;
+        border: 1px solid #ccc;
+
+        .status {
+            display: flex;
+            max-width: 70px;
+            min-width: 70px;
+            color: red;
+            align-items: center;
+            justify-content: center;
+            background: transparentize($color: red, $amount: 0.7);
+            border-left: 4px solid red;
+            font-weight: 700;
+
+            &.pending {
+                color: orange;
+                background: transparentize($color: orange, $amount: 0.7);
+                border-left: 4px solid orange;
+            }
+
+            &.confirmed {
+                color: green;
+                background: transparentize($color: green, $amount: 0.7);
+                border-left: 4px solid green;
+            }
+        }
+
+        .data {
+            display: flex;
+            flex-flow: column;
+            padding: 0.5rem;
+        }
+    }
+}
